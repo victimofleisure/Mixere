@@ -1,0 +1,32 @@
+<title>Automation Waveforms</title>
+<body>
+
+<h3>Automation Waveforms</h3>
+
+<p>The motion of an <a href="../Automation/Automation_Sliders.htm">automation slider</a> is controlled by a mathematical function known as a waveform.  The waveform normally has a triangular shape, but other options are available.  To observe the effect of different waveforms, create a looped slider automation, and try changing the waveform setting in the slider's <a href="../Automation/Automation_Dialog.htm">automation dialog</a>.  In the following descriptions, "period" refers to the time interval displayed in the automation dialog.  "Start point" and "end point" refer to either the slider's selection, or if it doesn't have one, the slider's full width.
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Wave</th><th>Effect</th>
+<tr>
+<td>Triangle</td><td>During one period, the slider thumb moves from the start point to the end point; during the next period, it reverses, and moves back to the start point.  This is the default setting.  When used with the Pan slider, it creates a typical "back and forth" style auto-panner.</td>
+</tr>
+<tr>
+<td>Ramp Up</td><td>During each period, the slider thumb moves from the start point to the end point, and then jumps back to the start point.</td>
+</tr>
+<tr>
+<td>Ramp Down</td><td>During each period, the slider thumb moves from the end point to the start point, and then jumps back to the end point.</td>
+</tr>
+<tr>
+<td>Square</td><td>During one period, the slider thumb stays at the start point; during the next period, it stays at the end point.</td>
+</tr>
+<tr>
+<td>Random</td><td>At the beginning of each period, the slider thumb jumps to a random position between the start and end points.</td>
+</tr>
+</table>
+
+</body>

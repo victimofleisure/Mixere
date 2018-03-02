@@ -1,0 +1,113 @@
+<?xml version="1.0" ?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>2.01</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 2.0.1.22 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>CKCI</Company_Name>
+		<Address_1>41 Dover St</Address_1>
+		<Address_2 />
+		<City_Town>Cambridge</City_Town>
+		<State_Province>MA</State_Province>
+		<Zip_Postal_Code>02140</Zip_Postal_Code>
+		<Country>USA</Country>
+		<Company_WebSite_URL>http://mixere.sourceforge.net</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Chris</Author_First_Name>
+			<Author_Last_Name>Korda</Author_Last_Name>
+			<Author_Email>victimofleisure@yahoo.com</Author_Email>
+			<Contact_First_Name>Chris</Contact_First_Name>
+			<Contact_Last_Name>Korda</Contact_Last_Name>
+			<Contact_Email>victimofleisure@yahoo.com</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email>victimofleisure@yahoo.com</Sales_Email>
+			<Support_Email>victimofleisure@yahoo.com</Support_Email>
+			<General_Email>victimofleisure@yahoo.com</General_Email>
+			<Sales_Phone />
+			<Support_Phone />
+			<General_Phone />
+			<Fax_Phone />
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>Mixere</Program_Name>
+		<Program_Version>1.0.82</Program_Version>
+		<Program_Release_Month>03</Program_Release_Month>
+		<Program_Release_Day>01</Program_Release_Day>
+		<Program_Release_Year>2005</Program_Release_Year>
+		<Program_Cost_Dollars>0</Program_Cost_Dollars>
+		<Program_Cost_Other_Code />
+		<Program_Cost_Other />
+		<Program_Type>Freeware</Program_Type>
+		<Program_Release_Status>New Release</Program_Release_Status>
+		<Program_Install_Support>Uninstall Only</Program_Install_Support>
+		<Program_OS_Support>WinNT 4.x,Windows2000,WinXP</Program_OS_Support>
+		<Program_Language>English</Program_Language>
+		<Program_Change_Info />
+		<Program_Specific_Category>Audio</Program_Specific_Category>
+		<Program_Category_Class>Audio &amp; Multimedia::Audio File Players</Program_Category_Class>
+		<Program_Categories>audio file player, audio mixer, sound collage</Program_Categories>
+		<Program_System_Requirements>566MHz, sound card, 128M mem, 1M disk, DirectX 8.1</Program_System_Requirements>
+		<Includes_JAVA_VM>N</Includes_JAVA_VM>
+		<Includes_VB_Runtime>N</Includes_VB_Runtime>
+		<Includes_DirectX>N</Includes_DirectX>
+		<File_Info>
+			<Filename_Versioned>Mixere10.zip</Filename_Versioned>
+			<Filename_Previous>Mixere10.zip</Filename_Previous>
+			<Filename_Generic>Mixere.zip</Filename_Generic>
+			<Filename_Long>Mixere1082.zip</Filename_Long>
+			<File_Size_Bytes>406043</File_Size_Bytes>
+			<File_Size_K>396</File_Size_K>
+			<File_Size_MB>0.39</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>N</Has_Expire_Info>
+			<Expire_Count />
+			<Expire_Based_On>Days</Expire_Based_On>
+			<Expire_Other_Info />
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>multitrack audio mixer sound collage</Keywords>
+			<Char_Desc_45>free multitrack audio file mixer</Char_Desc_45>
+			<Char_Desc_80>free multitrack audio file player and mixer, ideal for making live sound collage</Char_Desc_80>
+			<Char_Desc_250>Mixere is a free Windows application for mixing audio files.  Its simple, spreadsheet-like interface is ideal for live performance, and especially sound collage.  Dynamic looping, fully automated sliders, gradual mute/solo operations, and more.
+
+</Char_Desc_250>
+			<Char_Desc_450>Mixere is a free, open-source application for mixing WAV, AIFF, MP3, Ogg Vorbis, Flac, and Mod audio files. Mixere is ideal for live performance, and especially for multi-layered sound collages. It's like a rack full of CD players connected to an automated mixer. Features: dynamic looping/triggering of audio - automated volume, pan, pitch sliders - soft (gradual) mute/solo - crossfading - snapshots - unlimited undo - good help - standalone .EXE</Char_Desc_450>
+			<Char_Desc_2000>Mixere is a free, open-source application for mixing audio files. It runs on Windows NT/2000/XP, and supports WAV, AIFF, MP3, Ogg Vorbis, Flac, and Mod audio files. Mixere is ideal for live performance, and especially for creating multi-layered sound collages. It's like a rack full of CD players connected to an automated mixer. Features include: dynamic looping and triggering of audio - automated volume, pan, and pitch sliders - soft (gradual) mute/solo operations - crossfading between documents - snapshots, for rapid scene changes - unlimited undo - clipboard support, drag and drop - variable automation waveforms - intuitive and easy to learn - comprehensive help - low CPU/memory usage - unlimited audio file size - no installer, standalone .EXE file.  A Mixere document consists of a number of tracks, each containing a single audio file. Any number of tracks can play simultaneously, subject only to Windows and sound card performance limits. Audio is streamed directly from disk, so there's no limit on audio file size, and no waiting for audio to be loaded into memory. Mixere's interface is similar to a spreadsheet. The rows are tracks, and the columns are properties which can be adjusted for each track: name, transport (play/pause/stop/loop), mute/solo, volume, pan, pitch (two octaves), and audio position. Mixere doesn't record, but its output can be captured using a third-party audio capture tool, such as River Past Audio Capture (highly recommended!). Mixere doesn't use much CPU or memory, so it coexists peacefully with other audio applications.  Mixere is licensed under the GPL, and uses an open-source audio library called Audiere. It's a standalone executable, so there's no installer. Try it! If you don't like it, just delete it.
+</Char_Desc_2000>
+		</English>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>http://mixere.sourceforge.net</Application_Info_URL>
+			<Application_Order_URL>http://mixere.sourceforge.net</Application_Order_URL>
+			<Application_Screenshot_URL>http://mixere.sourceforge.net/images/mixere-main-window.gif</Application_Screenshot_URL>
+			<Application_Icon_URL>http://mixere.sourceforge.net/images/mixere-icon-32x32.gif</Application_Icon_URL>
+			<Application_XML_File_URL>http://mixere.sourceforge.net/mixere.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>http://churchofeuthanasia.org/mixere/mixere-1.0.82-bin.zip</Primary_Download_URL>
+			<Secondary_Download_URL>http://cogent.dl.sourceforge.net/sourceforge/mixere/mixere-1.0.82-bin.zip</Secondary_Download_URL>
+			<Additional_Download_URL_1>http://mesh.dl.sourceforge.net/sourceforge/mixere/mixere-1.0.82-bin.zip</Additional_Download_URL_1>
+			<Additional_Download_URL_2>http://optusnet.dl.sourceforge.net/sourceforge/mixere/mixere-1.0.82-bin.zip</Additional_Download_URL_2>
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions />
+		<EULA>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111 USA.</EULA>
+	</Permissions>
+	<ASP>
+		<ASP_FORM>Y</ASP_FORM>
+		<ASP_Member>N</ASP_Member>
+		<ASP_Member_Number />
+	</ASP>
+</XML_DIZ_INFO>

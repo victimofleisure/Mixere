@@ -1,0 +1,34 @@
+<title>Automation Sliders</title>
+<body>
+
+<h3>Automation Sliders</h3>
+
+<p>In Mixere, most sliders can be automated.  Automation in this context means telling a slider thumb to move from one point to another within a given time interval.  Automation sliders are identified by a round, colored indicator on the slider thumb.
+
+<p>An automation slider has controls that aren't always visible; they are located in a dialog, called the <a href="../Automation/Automation_Dialog.htm">Automation Dialog</a>, which can be shown or hidden.  To show or hide a slider's automation dialog, use one of the following methods:
+
+<ul>
+<li>Middle-click on the slider, or on the automation dialog.  Note that this only works if the "Middle-click shows auto dialog" option is checked; see <a href="../Loose_Ends/Options.htm">Options</a>.
+<li>Ctrl+left-click on the slider; this is handy if you don't have a middle mouse button.
+<li>If the slider has focus, press the 'A' key to show its automation dialog; if the automation dialog is the active window, press 'A' to hide it.
+</ul>
+
+<p>The automation dialog includes transport controls, consisting of a Play, Pause, Stop, and Loop button, which affect the automation in much the same way that a track's transport controls affect its audio.  The indicator on the slider's thumb represents its current transport state: green for Play, yellow for Pause, and red for Stop.
+
+<p>An automation slider can have a selection, consisting of a start point and an end point.  A selection limits the range of the automation, so that the slider thumb stays between these two points.  If no selection exists, the thumb traverses the full width of the slider.  Selections are created using the right mouse button; see <a href="../Tracks/Audio_Selections.htm">Audio Selections</a> for details.
+
+<p>The automation dialog also includes controls for setting the automation time.  Automation time is the interval within which the slider's thumb will move from one end of the selection to the other, or if no selection exists, from one end of the slider to the other.  Automation times can range from 1/100 of a second to 100 hours.  The time can be set using a slider, or entered directly in an edit box.
+
+<p>To start an automation:
+
+<ol>
+<li>Specify how far the slider should move, by creating a selection, or editing the existing selection.  This step can be skipped if the selection (or lack thereof) is acceptable.
+<li>Open the automation dialog, using middle-click, Ctrl+left-click, or 'A'.
+<li>Set or edit the automation time.  This step can be skipped if the time is acceptable.
+<li>If the automation should repeat, make sure the Loop button is pressed.
+<li>Press Play to start the automation.  The automation dialog closes by itself.
+</ol>
+
+<p>If the automation time is already set, it's possible to avoid all of these steps by using the "Quick Start" feature.  To use "Quick Start", Alt+left-click on the point you want the slider to move to.  A selection is automatically created between the current thumb position and the specified point, and the thumb immediately begins moving towards the specified point.  For more slider shortcuts, see <a href="../Reference/Automation_Slider_Commands.htm">Automation Slider Commands</a>.
+
+</body>

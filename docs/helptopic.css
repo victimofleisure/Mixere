@@ -1,0 +1,13 @@
+BODY {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 80%
+}
+TABLE { font-size: 100% }	/* fixes IE5 tables don't inherit font size bug */
+IMG {
+	BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; TEXT-ALIGN: center; VERTICAL-ALIGN: middle
+}
+H1 {
+	TEXT-ALIGN: center
+}
+.title {
+	FONT-SIZE: larger; FONT-WEIGHT: bold
+}

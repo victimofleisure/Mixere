@@ -1,0 +1,12 @@
+<title>Tempo</title>
+<body>
+
+<h3>Tempo</h3>
+
+<p>In Mixere, tempo is a scaling factor that's applied to automation times.  Tempo only applies to <a href="../Automation/Automation_Sliders.htm">automation sliders</a> in tracks; other automation sliders, e.g. document volume, aren't affected.  The scaling factor defaults to 1 (no scaling), and ranges from 0.5 (half time) to 2 (double time).  Tempo shrinks or stretches the time axis, i.e. it changes the duration of a second, so that that a one-second automation actually takes as little as half a second, or as much as two seconds.
+
+<p>Each document has its own tempo, which can be changed using the Tempo <a href="../Loose_Ends/Control_Bars.htm">control bar</a>.  To show or hide the control bar, choose <em>Tempo</em> from the View menu, or press T.  The control bar includes a tempo slider, and an edit box for entering specific tempos.  Note that the tempo slider itself supports automation, which means a document can be programmed to gradually speed up or slow down its automations.  This is useful when samples are being played in a synchronized pattern, using <a href="../Automation/Auto-Trigger.htm">Auto-Trigger</a>; the effect is similar to creating a tempo map in a sequencer.
+
+<p>Tempo is displayed in beats per minute (BPM), according to tradition, but since Mixere doesn't support notes or time signatures, the definition of a beat is arbitrary.  In Mixere, a beat is a half-second auto-trigger loop, which triggers twice per second, or 120 times per minute.  To demonstrate this, load an audio file containing a single percussive sample, and auto-trigger the sample with an automation time of 0:0:0.50, while Mixere's tempo is set to 120; the resulting loop should stay in sync with a metronome set to 120 BPM.
+
+</body>

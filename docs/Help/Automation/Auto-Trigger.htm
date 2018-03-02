@@ -1,0 +1,36 @@
+<title>Auto-Trigger</title>
+<body>
+
+<h3>Auto-Trigger</h3>
+
+<p>All of a track's sliders support automation, but the position slider is special.  In ordinary <a href="../Automation/Automation_Sliders.htm">automation sliders</a>, the automation moves the slider thumb, as though the thumb were motorized.  In the position slider, however, the automation doesn't directly control the slider thumb; the slider thumb always follows the audio position.  Instead, the automation <em>triggers</em> the audio: at the beginning of each automation period, the audio is stopped, rewound, and re-played.  The result is that the audio is automatically repeated at regular intervals.  This situation is referred to as "auto-triggering".
+
+<p>"Audio" in this context means either the <a href="../Tracks/Audio_Selections.htm">audio selection</a>, or if there's no selection, the entire audio file.  "Automation period" refers to the time displayed in the slider's <a href="../Automation/Automation_Dialog.htm">automation dialog</a>.
+
+<p>Auto-trigger is different from audio looping, which occurs when a track's Loop button is pressed.  With audio looping, the repetition frequency depends on the audio length, i.e. shorter samples loop more frequently.  With auto-trigger, the repetitions occur at whatever frequency you specify, regardless of the audio's length.  If the audio is too long, it gets cut off.  If the audio is too short, the remaining time is filled, either with silence (if audio looping is off), or with loops (if audio looping is on).
+
+<p>Because auto-trigger allows you to create space between repetitions of a sample, it's useful for making a mix less "busy".  It can also be used to make patterns of synchronized samples, similar to those made by sequencers, provided you're not too fussy about timing accuracy.  See also <a href="../Automation/Synchronization.htm">Synchronization</a>.
+
+<p>Starting an auto-trigger is just like starting an ordinary automation, except that the automation dialog's Loop button is disabled (an auto-trigger is an automation loop by definition).
+
+<ol>
+<li>Specify an audio selection, if desired; this step can be skipped if the selection (or lack thereof) is acceptable.
+<li>Open the automation dialog, using middle-click, Ctrl+left-click, or 'A'.
+<li>Set or edit the automation time.  This step can be skipped if the time is acceptable.
+<li>Press Play to start auto-triggering.  The automation dialog closes by itself.
+</ol>
+
+<p>Starting an auto-trigger has an optional side effect: it turns off audio looping for the corresponding track.  If this isn't what you want, you can either turn audio looping back on manually, or disable this side effect, by unchecking the "Auto-trigger turns off audio looping" option; see <a href="../Loose_Ends/Options.htm">Options</a>.
+
+<p>While a track is auto-triggering, left-clicking on its position slider doesn't set the audio position as usual; instead, it immediately triggers the audio, and resets the triggering loop.  This allows you to synchronize the track, relative to other tracks.
+
+<p>The differences between a position slider and an ordinary automation slider can be summarized as follows:
+
+<ul>
+<li>Automation periodically triggers the audio, instead of directly controlling the slider thumb.
+<li>Automation is always looped, and the loop button is disabled in the slider's automation dialog.
+<li>Starting an automation turns off audio looping for the corresponding track, unless you've disabled this option.
+<li>While the slider is playing, left-clicking it triggers the audio, instead of setting the audio position.
+</ul>
+
+</body>

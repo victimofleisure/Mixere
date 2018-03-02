@@ -1,0 +1,22 @@
+BODY {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 80%
+}
+TABLE { font-size: 100% }	/* fixes IE5 tables don't inherit font size bug */
+BODY {
+	BACKGROUND-COLOR: #667799
+}
+IMG {
+	BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; TEXT-ALIGN: center; VERTICAL-ALIGN: middle
+}
+H1 {
+	TEXT-ALIGN: center
+}
+.title {
+	FONT-SIZE: larger; FONT-WEIGHT: bold
+}
+.menu {
+	BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: #000000 1px inset; BORDER-LEFT: #000000 1px inset; BORDER-RIGHT: #000000 1px inset; BORDER-TOP: #000000 1px inset; LEFT: 1em; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px; POSITION: absolute; TOP: 1em; WIDTH: 7.5em
+}
+#body {
+	BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: #000000 1px inset; BORDER-LEFT: #000000 1px inset; BORDER-RIGHT: #000000 1px inset; BORDER-TOP: #000000 1px inset; LEFT: 10em; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px; POSITION: absolute; RIGHT: 1em; TOP: 1em
+}

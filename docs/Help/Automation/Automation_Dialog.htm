@@ -1,0 +1,62 @@
+<title>Automation Dialog</title>
+<body>
+
+<h3>Automation Dialog</h3>
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th colspan=2>Automation Dialog Controls</th>
+</tr>
+<tr>
+<td>Play Button</td><td>Starts the slider thumb moving from its current position.  Which direction it moves depends on whether the slider was paused or stopped.</td>
+</tr>
+<tr>
+<td>Pause Button</td><td>Pauses the slider.  While a slider is paused, pressing Play causes the thumb to continue moving in the same direction it was moving before.</td>
+</tr>
+<tr>
+<td>Stop Button</td><td>Stops the slider.  While a slider is stopped, pressing Play causes the thumb to begin moving towards whichever selection endpoint is furthest away, or if there's no selection, towards whichever end of the slider is furthest away.</td>
+</tr>
+<tr>
+<td>Loop Button</td><td>Turns loop mode on/off.  Normally, an automation stops by itself when the slider reaches one of the selection endpoints, or one end of the slider.  However, in loop mode, the automation repeats continuously.</td>
+</tr>
+<tr>
+<td>Time Slider</td><td>Sets the automation time.  The slider's range is either 0 to 60 seconds, or 0 to 60 minutes, as determined by Minutes button (marked "m").  To enter times shorter than a second, or longer than an hour, use the edit box.</td>
+</tr>
+<tr>
+<td>Minutes Button</td><td>Sets the time slider's unit.  If pressed, the unit is minutes, otherwise the unit is seconds.</td>
+</tr>
+<tr>
+<td>Time Edit Box</td><td>Edits the automation time.  Times must be entered in hh:mm:ss.hs format (hours, minutes, seconds, hundredths of a second).  Spaces can be used as separators instead of colons and periods.  Incomplete times can be entered, e.g. 1:05 is interpreted as 1:05:00.00.  Editing the time doesn't affect the automation until you change the focus, e.g. by pressing Tab.  The edit box includes up/down buttons for making fine adjustments to the time.  The up/down unit is either hundredths of a second, or if the Minutes button is pressed, seconds.  If an up/down button is pressed for longer than a few seconds, the rate at which the value changes is gradually increased.</td>
+</tr>
+<tr>
+<td>Waveform Drop List</td><td>Sets the automation waveform.  The options include Triangle (the default), Ramp Up, Ramp Down, Square, and Random; see <a href="../Automation/Automation_Waveforms.htm">Automation Waveforms</a> for details.
+</td>
+</tr>
+</table>
+
+<p>While an automation dialog is the active window, most of the normal <a href="../Reference/Mixere_Shortcut_Keys.htm">Mixere Shortcut Keys</a> don't work.  The dialog defines its own shortcut keys, as shown below.  Note that some of the keys (Space, P, U, S, L) perform the same function for automation that they ordinarily perform for audio.
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr><th colspan=3>Automation Dialog Shortcut Keys</th></tr>
+<tr><td>Space</td><td>Toggle</td><td>Switch the automation between play and pause</td></tr>
+<tr><td>P</td><td>Play</td><td>Play the automation</td></tr>
+<tr><td>U</td><td>Pause</td><td>Pause the automation</td></tr>
+<tr><td>S</td><td>Stop</td><td>Stop the automation</td></tr>
+<tr><td>L</td><td>Loop</td><td>Turn automation loop mode on/off</td></tr>
+<tr><td>Shift+Space</td><td>Go</td><td>Play paused items</td></tr>
+<tr><td>M</td><td>Minutes</td><td>Switch the time slider's unit between seconds and minutes</td></tr>
+<tr><td>A</td><td>Auto Dialog</td><td>Show or hide the automation dialog</td></tr>
+<tr><td>Ctrl+Z</td><td>Undo</td><td>Undo the last action</td></tr>
+<tr><td>Ctrl+Y</td><td>Redo</td><td>Redo the previously undone action</td></tr>
+</table>
+
+</body>

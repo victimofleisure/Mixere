@@ -1,0 +1,60 @@
+<title>Mute/Solo</title>
+<body>
+
+<h3>Mute/Solo</h3>
+
+<p>The mute and solo buttons work together to enable or disable a track's audio.  This explanation assumes the track is playing and has a non-zero volume slider.  Put simply, mute silences the track, while solo makes the track audible, and silences all other tracks that aren't also soloed.  Solo "trumps" (overrides) mute, i.e. soloing a track makes it audible regardless of whether it's muted.  The following table illustrates Mute/Solo behavior in detail:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Mute</th><th>Solo</th><th>Other tracks soloed</th><th>Track is:</th>
+</tr>
+<tr>
+<td>No</td><td>No</td><td>No<td>Audible</td>
+</tr>
+<tr>
+<td>Yes</td><td>No</td><td>No</td><td>Silenced</th>
+</tr>
+<tr>
+<td>No</td><td>Yes</td><td>No</td><td>Audible</th>
+</tr>
+<tr>
+<td>Yes</td><td>Yes</td><td>No</td><td>Audible</th>
+</tr>
+<tr>
+<td>No</td><td>No</td><td>Yes<td>Silenced</td>
+</tr>
+<tr>
+<td>Yes</td><td>No</td><td>Yes</td><td>Silenced</th>
+</tr>
+<tr>
+<td>No</td><td>Yes</td><td>Yes</td><td>Audible</th>
+</tr>
+<tr>
+<td>Yes</td><td>Yes</td><td>Yes</td><td>Audible</th>
+</tr>
+</table>
+
+<p>While at least one track is soloed, the mute buttons don't affect the audio, and the mixer is said to be in "solo mode".  In solo mode, the solo buttons control the mix, but when you exit solo mode, the mute buttons regain control.  Solo mode acts like a detour: when you exit solo mode, the pre-solo mix is restored, assuming you didn't change any mute buttons during the solo.  If you did change some mute buttons during the solo, the solo becomes a "one-way trip" instead of a "round trip".
+
+<p>There are three ways to exit solo mode:
+
+<ul>
+<li>Unsolo the soloed tracks one by one.
+<li>Select <em>End Solo</em> (\) from the Track menu.
+<li>Select <em>Keep Solo</em> (K) from the Track menu.
+</ul>
+
+<p>The End Solo command is the equivalent of unsoloing all the soloed tracks at once.  This is a dramatic effect and can result in a sudden volume change.
+
+<p>The Keep Solo command ends the solo without disturbing the audio.  The current solo is emulated using the Mute buttons, so that exiting solo mode only affects the user interface.  This is useful for making one-way transitions; it allows you to turn a solo into a new starting point.  In travel terms, it's like throwing away your return ticket.
+
+<p>The status bar contains two indicators which reflect the Mute/Solo state of the current document.  The mute indicator is lit while at least one track is muted, and the solo indicator is lit while at least one track is soloed.
+
+<p>It's possible to mute or solo multiple tracks at once, by <a href="../Tracks/Selecting_Tracks.htm">selecting</a> them first, and then choosing Mute or Solo from the Edit menu, or the context menu.  Note that Mixere also supports "soft" (gradual) mute/solo operations; see <a href="../Documents/Mute-Solo_Fade.htm">Mute/Solo Fade</a>.
+
+</body>

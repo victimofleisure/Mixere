@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Mixere - Development</title>
+<meta content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<link href="./style.css" rel=stylesheet title=default type=text/css>
+</head>
+<body>
+<div class=menu>
+<a href="./index.html"><img src="./images/mixere-icon-32x32.gif" width="32" height="32" alt="icon"></a>
+<div class=title>Mixere</div><p>
+<div class=menuitem title="Overview"><a href="./index.html">Home</a></div>
+<div class=menuitem title="Screenshots"><a href="./screenshots.html">Screenshots</a></div>
+<div class=menuitem title="Features"><a href="./features.html">Features</a></div>
+<div class=menuitem title="Download"><a href="./download.html">Download</a></div>
+<div class=menuitem title="Documentation"><a href="./helpframe.html">Documentation</a></div>
+<div class=menuitem title="Development"><b>Development</b></div>
+<div class=menuitem title="Lists"><a href="./lists.html">Lists</a></div>
+<div class=menuitem title="Links"><a href="./links.html">Links</a></div>
+<div class=menuitem title="Contact"><a href="./contact.html">Contact</a></div><br>
+</div>
+<div id=body>
+<!--  content goes HERE  -->
+
+<h1>Development</h1>
+
+<h3>Revision History</h3>
+
+<p>The revision history is a spreadsheet containing all past, current, and future issues with Mixere.  The issues are ordered by category, close date, and open date.  The categories are as follows:
+
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<colgroup>
+<col width=75>
+</colgroup>
+<tr>
+<td>bug</td>
+<td>an outstanding problem, to be fixed asap</td>
+</tr>
+<tr>
+<td>done</td>
+<td>a resolved problem or completed enhancement</td>
+</tr>
+<tr>
+<td>hold</td>
+<td>a proposed enhancement that's being deferred</td>
+</tr>
+<tr>
+<td>punt</td>
+<td>an outstanding problem that's being deferred</td>
+</tr>
+</table>
+
+<ul>
+<li><a href="issues.html">Mixere issues (HTML table)</a>
+<li><a href="issues.txt">Mixere issues (tab-delimited text file)</a>
+</ul>
+
+<h3>Object Charts</h3>
+
+<p>These charts describe relationships between Mixere's various component objects.  Only two types of relationship are shown: inheritance (AKA "is a"), and composition (AKA "has a").  Inheritance is indicated by curved connectors, and always moves down the page; i.e. a derived object always appears below its base class.  Composition is indicated by straight connectors with arrowheads, and may move in any direction, though generally it moves down the page also.  When two objects use each other (co-dependence), this is indicated by a connector with an arrowhead at both ends.  Note that the undo system is integrated into MFC's object hierarchy using multiple inheritance.
+
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<colgroup>
+<col width=100>
+</colgroup>
+<tr>
+<td><a href="images/objs-CMixereView.swf">CMixereView</a></td>
+<td>mixer, channels, and controls</td>
+</tr>
+<tr>
+<td><a href="images/objs-CMixereDoc.swf">CMixereDoc</a></td>
+<td>document information flow</td>
+</tr>
+<tr>
+<td><a href="images/objs-CMainFrm.swf">CMainFrm</a></td>
+<td>main frame control bars</td>
+</tr>
+<tr>
+<td><a href="images/objs-CChildFrm.swf">CChildFrm</a></td>
+<td>child frame control bars</td>
+</tr>
+</table>
+
+<p>You'll need <a href="http://www.macromedia.com/shockwave/download/download.cgi">flash</a> to view these charts.
+
+<!--  content stops HERE  -->
+</div>
+</body>
+</html>

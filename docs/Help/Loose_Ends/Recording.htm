@@ -1,0 +1,38 @@
+<title>Recording</title>
+<body>
+
+<h3>Recording</h3>
+
+<p>Mixere does not directly support recording.  To record Mixere's audio output, you must do one of the following things:
+
+<ul>
+<li>Record your sound card's analog output, or its digital output if possible, using some type of external hardware, e.g. Minidisc recorder, DAT recorder, hard-disk recorder, another PC, etc.
+<li>Record Mixere's digital output before it gets to your sound card, using audio capture software.
+</ul>
+
+<p>Audio capture software is the simplest and least expensive option.  There's a ton of it available on the internet, but the main problem is finding something that actually works without accidentally installing spyware or trojans.  In general, if it's free, but not open-source, be very careful.  We've only tried two commercial products so far, and the results are shown below:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col width=100 valign=top>
+<col width=100 valign=top>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Company</th><th>Product</th><th>Price</th><th>Results</th>
+</tr>
+<tr>
+<td>High Criteria</td><td>Total Recorder</td><td>$11.95</td><td>Didn't work, and trashed our sound card drivers, requiring a total reinstall of Windows 2000.  NOT recommended.
+</tr>
+<tr>
+<td>River Past</td><td>Audio Capture</td><td>$29.95</td><td>Works great!  Easy to install and use.  Highly recommended.  <a target="_top" href="http://www.riverpast.com/">http://www.riverpast.com/</a>
+</td>
+</tr>
+</table>
+
+<p>Successful audio capture depends heavily on the quality of your sound card.  The default sound cards shipped with most PCs are usually inferior and likely to cause problems.  We're currently using M-Audio's Delta Audiophile 2496.  It's about $100, comes with low-latency ASIO drivers, and is highly recommended.
+
+<p>Any decent audio capture software will allow you to choose your recording sample rate.  The most common choices are 44.1KHz (CD Quality) and 48KHz.  If you intend to create music CDs from your recordings, you should definitely record at 44.1KHz.  Otherwise you'll have to sample-rate convert your recordings later, which will introduce ugly distortion.  If you don't care about burning music CDs, use 48KHz, or try both options and see which one sounds better.
+
+</body>

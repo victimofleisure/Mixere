@@ -1,0 +1,387 @@
+open	close	type	description	rev
+2/27/05	7/6/07	done	MP3 files are now seekable, thanks to Audiere 1.9.4.0	1.1.00
+6/25/05	6/26/05	done	if you load audio files before accessing help for the first time, help file is not found, because loading audio changes current folder; append help file name to app path and retry	1.0.83
+3/13/05	3/19/05	done	if undo levels is set to zero, closing a modified document doesn't display a save prompt; in undo manager, NotifyEdit must bump m_Edits regardless of number of undo levels	1.0.83
+2/27/05	2/27/05	done	in multi-auto dialog, adjusting position during play sets selected sliders to zero; side effect of adding variable waveforms, OnNewPos must use m_Info.m_Pos instead of GetNormPos	1.0.82
+2/24/05	2/25/05	done	starting an auto-trigger turns off audio looping; potentially harmful, so make side effect optional	1.0.82
+2/24/05	2/24/05	done	for auto-trigger, automation looping should always be on; disable loop button in auto-trigger dialog	1.0.82
+3/8/04	2/24/05	done	in auto-trigger dialog, pressing play forces audio looping off; multi-auto dialog should do the same	1.0.82
+2/7/05	2/7/05	done	header sort generates spurious column width undo notifications; header's OnItemChanging should resize column only if width has actually changed	1.0.81
+2/6/05	2/7/05	done	current channel should stay visible during sorting	1.0.81
+2/1/05	2/7/05	done	implement find for channel titles	1.0.81
+1/16/05	2/5/05	done	assign shortcut keys to snapshots; prevent collisions with main shortcut keys	1.0.80
+2/2/05	2/3/05	done	opening and closing multi auto dialog generates undo notification; override OnModified to tell view whether to cancel notification	1.0.79
+1/25/05	2/2/05	done	set column width should be undoable	1.0.79
+12/1/04	2/2/05	done	after channels are deleted, any snapshots that referenced them contain dead channel snaps which waste a lot of space; prune snapshots during doc loading	1.0.79
+1/1/05	2/1/05	done	implement undo for all snapshot functions	1.0.79
+1/31/05	1/31/05	done	dialog bar undo broken since 1.0.77; CDialogBarEx used to set window ID to res ID, but now that it correctly offsets from AFX constant, ID exceeds 7FFF and mixer thinks it’s a channel	1.0.79
+1/29/05	1/29/05	done	CPopupEdit ctor must initialize m_MaxText	1.0.78
+1/27/05	1/27/05	done	if you press F1, load an audio file, and then close app, app crashes in Windows DLL code; main frame must initialize and uninitialize HTML help	1.0.78
+1/25/05	1/25/05	done	undo edit title doesn't update channel's m_Title; static edit control's RestoreUndoState handler must send change notification	1.0.78
+1/19/05	1/21/05	done	still punting on 3/8/04 erratic auto-trigger start point issue, but at least fix it when selection starts at zero; channel rewind can do a Reset instead of a SetPosition in that case	1.0.78
+12/30/03	1/21/05	done	add support for HTML help	1.0.78
+1/19/05	1/20/05	done	if saving doc causes doc title to change, doc titles in dialog bars aren't updated; captions of volume, snapshot, tempo, and M/S bars are one case, crossfader source list boxes are another	1.0.78
+1/17/05	1/19/05	done	add toolbar buttons for load audio and take snapshot	1.0.77
+1/17/05	1/17/05	done	if a track with a position slider selection is cloned, and original and clone are edited, trigger edit dialog doesn't show selection; in channel SetInfo, don't set slider selection from audio loop	1.0.77
+1/15/05	1/16/05	done	sorting on position in frames gives unexpected results; use normalized position instead	1.0.77
+1/15/05	1/16/05	done	sort snapshot list by name or ID	1.0.77
+12/1/04	1/16/05	done	snapshot save/restore; undo implemented for restore only	1.0.77
+1/14/05	1/14/05	done	number column's header button should sort by channel ID; effectively a sort by creation time	1.0.77
+1/12/05	1/13/05	done	for big docs, status bar mute/solo indicators aren't always updated, esp. when app is maximized; 11/14/04 OnUpdateCmdUI override has side effects, view's SetInfo must reset disabled style	1.0.77
+12/1/04	1/10/05	done	to support grouping, channels must have unique persistent identifiers, and paste must distinguish between local and foreign data	1.0.76
+1/3/05	1/9/05	done	can't easily sync two automations within the same channel, or sync an automation with audio play; need a 'go' feature that plays all paused audio or automations	1.0.75
+1/8/05	1/8/05	done	saving doc doesn't reset undo manager's modified flag	1.0.75
+1/6/05	1/6/05	done	in alt menu mode, main frame receives middle-click instead of slider ctrl; main frame must redirect it to window under cursor	1.0.75
+1/6/05	1/6/05	done	quick start is too useful to be a slider option; make quick start shift+left-click, open auto dialog ctrl+left-click, and set default pos ctrl+shift+left-click	1.0.75
+1/5/05	1/6/05	done	after audio play, and in other cases, multi-trigger dlg doesn't show audio position correctly; change auto trigger ctrl so that m_Pos is always audio position, except in get/set info	1.0.75
+1/5/05	1/6/05	done	if a stopped track is rewound using channel's stop button, undo notification isn't sent; OnStop's duplicate notification test must account for rewind side effect	1.0.75
+1/5/05	1/6/05	done	if a stopped track has its position moved away from start point, when doc is reopened, thumb and audio position don't agree; SetInfo is rewinding audio, use SetTransportAndPos	1.0.75
+1/3/05	1/5/05	done	if non-repeat auto slider is played from pause, manually repositioned at start, and played from pause again, second time it doesn't move; in slider's OnTransport, use AtStart/AtEnd	1.0.75
+1/3/05	1/4/05	done	undo multi-channel play from pause doesn't restore audio positions	1.0.74
+1/2/05	1/4/05	done	crossfader and master volume automation states should persist in registry	1.0.74
+10/1/04	1/4/05	done	if control bar child window IDs change, app could crash; verify bar states before restoring them	1.0.74
+3/8/04	1/4/05	done	make middle mouse button feature optional	1.0.74
+1/17/04	1/4/05	done	options dialog is too confusing; convert it to a property sheet	1.0.74
+1/2/05	1/3/05	done	disable waveform combo box for auto-trigger dialogs, both single and multi	1.0.74
+1/2/05	1/3/05	done	copy/paste between different versions of app causes crash; append file version to clipboard ID	1.0.74
+12/27/04	12/31/04	done	make automation waveform variable: triangle, ramp up, ramp down, square	1.0.74
+12/30/04	12/30/04	done	opening too many docs causes crash; in form view CreateItem, if OnNewItem fails, return failure	1.0.73
+11/1/03	12/30/04	done	with many docs open, app saturates CPU, because timer messages are triggering idle processing; override IsIdleMessage to exclude timer and other frequently repeated messages	1.0.73
+12/29/04	12/29/04	done	undo auto edit restores the auto state using SetInfo, which doesn't call OnNewPos or OnSelection, so audio properties don't get updated; use SetInfoNotify instead	1.0.73
+12/29/04	12/29/04	done	if you drag/move slider selection, and while holding down right button, move cursor outside slider and left-click, drag/move state sticks; OnLButtonDown must end select slider's modal state	1.0.73
+12/29/04	12/29/04	done	if audio is playing, no previous loop exists, and a loop is created using a single click to the left of slider thumb, audio position can escape from loop; fudge compare by a slider increment	1.0.73
+12/28/04	12/29/04	done	audio position sometimes escapes from loop during scrubbing: remove obsolete overlap test	1.0.73
+10/27/04	12/29/04	done	in auto slider, Ctrl+Home and Ctrl+End should move selection, not thumb	1.0.73
+12/26/04	12/27/04	done	multi edit auto dlg's selection edit boxes blank when selection is very short; in CSelectSliderCtrl, SetNormSelection must test its args for -1 instead of equality	1.0.73
+12/24/04	12/26/04	done	make about box URL a hyperlink	1.0.73
+10/1/04	12/24/04	done	change registry key	1.0.73
+9/24/04	12/24/04	done	add GPL header to all source files and about box	1.0.73
+1/29/04	12/24/04	done	in multi auto dlg, if automations stop by themselves, dlg's transport state can become inaccurate	1.0.73
+9/26/04	12/23/04	done	consolidate document version	1.0.73
+12/22/04	12/22/04	done	add Ogg-Vorbis, Flak, and Mod audio files to channel's file filter	1.0.72
+12/16/04	12/22/04	done	make automation quick start optional	1.0.72
+12/16/04	12/22/04	done	in multi auto edit dialog, add edit boxes for position and selection start/end	1.0.72
+12/17/04	12/15/04	done	opening volume edit dlg while volume automation is playing causes unexpected audio play	1.0.71
+12/15/04	12/15/04	done	link audio play to auto volume play only if audio is paused	1.0.71
+12/15/04	12/15/04	done	divider double-click now sets default width	1.0.71
+11/20/04	12/14/04	done	if you left-click on pos slider while it's triggering, it doesn't receive focus	1.0.71
+10/30/04	12/14/04	done	automation quick start: left-clicking in slider channel starts thumb moving towards cursor position; dragging thumb works as usual	1.0.71
+2/11/04	12/14/04	done	if channels are added to an empty document via set channel count, current position isn't shown	1.0.71
+12/8/04	12/8/04	done	use WriteBinary for CPersist window placement functions	1.0.70
+11/18/04	11/19/04	done	if multi auto dlg changes position of multiple sliders, auto time becomes zero in all of them; auto dlg's OnHScroll must ensure that message is from itself and not from derived class	1.0.69
+11/8/04	11/19/04	done	channel active and selection colors should be a user preference	1.0.69
+11/1/03	11/15/04	done	dragging channels within a document	1.0.68
+11/12/04	11/14/04	done	if doc was saved with a docked dialog bar visible, status bar mute/solo indicators aren't updated when doc is reopened (in release only); CColorStatusBar must override OnUpdateCmdUI	1.0.67
+11/12/04	11/12/04	done	if slider's auto dlg is visible, and slider is target of multi auto dlg, auto dlg doesn't track changes	1.0.67
+11/8/04	11/8/04	done	closing doc during solo causes crash; child frame's OnDestroy must end solo	1.0.67
+11/8/04	11/8/04	done	since 1.0.66, middle click in auto slider isn't activating channel; CDialogEx used to have a virtual OnNcActivate handler, lost during child dialog removal, add it to CAutoDlg instead	1.0.67
+11/7/04	11/8/04	done	channel, derived dialog bars, and color status bar don't display MFC members in class wizard; derived name must contain an MFC base name or a recognized abbreviation, e.g. Dialog, Dlg	1.0.67
+11/7/04	11/7/04	done	undo position slider thumb doesn't work, and sometimes causes spurious play; remove auto trigger ctrl's RestoreUndoState override and revert to base class undo handling	1.0.67
+12/6/03	11/7/04	done	implement minimum width for column resizing; must work for both show and non-show dragging	1.0.67
+10/13/04	11/6/04	done	get disabled slider's channel color from system; check by changing windows colors	1.0.67
+9/27/04	10/8/04	done	mute, change M/S time, unmute same channel: 2nd mute doesn't use new time	1.0.66
+5/15/04	10/8/04	done	if mute time is non-zero, pasting soloed channel while fade is in progress behaves unexpectedly	1.0.66
+5/14/04	10/8/04	done	after a channel is loaded with audio, its first mute sometimes doesn't observe mute time	1.0.66
+10/7/04	10/7/04	done	control bar auto dialogs aren't showing tooltips; CDialogBarEx::EnableToolTips must be virtual	1.0.66
+10/7/04	10/7/04	done	in m/s fade bar, undoing time slider updates time edit ctrl but not slider	1.0.66
+2/8/04	10/7/04	done	master volume must persist in registry; risk of ear damage outweighs potential confusion	1.0.66
+9/28/04	10/6/04	done	if control bars are resized, the updated size isn't saved in document or registry	1.0.66
+10/3/04	10/5/04	done	auto dlg should not have minimize button	1.0.66
+10/1/04	10/5/04	done	if an auto dialog is visible, and app is minimized, task switcher  doesn't see it, and clicking on its taskbar icon doesn't restore it; attempted fix 3/10/04, disable child dialogs	1.0.66
+10/1/04	10/5/04	done	first time you click on another app, Mixere pops back in front; disable child dialogs	1.0.66
+10/1/04	10/5/04	done	if two documents are open, and one has an auto dialog, when app is restored, that document will be on top, even if it wasn't before; side effect of CDialogEx::OnNcActivate, disable child dialogs	1.0.66
+10/3/04	10/3/04	done	if app starts with tool tips disabled, main frame's control bars show them anyway, because restoring bar state magically enables tool tips for all the bars; tool tip state must be reapplied	1.0.65
+10/3/04	10/3/04	done	if app state can't be restored (e.g. on first run), main frame's bars don't dock all on same row	1.0.65
+10/2/04	10/2/04	done	bar captions are a mess; add origin shift to resizer, and make it a member of dialog bar base	1.0.65
+10/1/04	10/2/04	done	if app is run via shell open, and document is initially maximized, and there's a docked bar visible, bar controls may not paint correctly; must invalidate bar in OnSize, on dock state change only	1.0.65
+9/27/04	10/2/04	done	master volume and crossfader should be control bars too	1.0.65
+2/8/04	10/2/04	done	window placement and visibility of modeless dialogs should persist; for free with control bars	1.0.65
+1/1/04	10/2/04	done	master volume dialog covers its automation dialog's caption bar; control bars make this moot	1.0.65
+10/1/04	10/1/04	done	when slider bar is docked vertically, its controls overwrite gripper; allow horz dock only	1.0.65
+10/1/04	10/1/04	done	if control bar is docked vertically, header control gets out of sync with view; allow horz dock only	1.0.65
+10/1/04	10/1/04	done	if bars are on docked at top of frame in two rows, and one is dragged and redocked at bottom, header doesn't paint; CChildFrame::RecalcLayout must resize header *after* calling base class	1.0.65
+9/30/04	10/1/04	done	fold mixer into view, so that mixer can derive directly from view	1.0.65
+9/29/04	9/29/04	done	multi edit auto dlg doesn't allow fine adjust; derive its slider from auto slider and disable auto dlg	1.0.65
+9/27/04	9/29/04	done	when editing time sets minutes button as side effect, undo doesn't restore minutes button	1.0.65
+9/27/04	9/28/04	done	editing M/S time doesn't set appropriate unit	1.0.65
+9/27/04	9/28/04	done	memory leak since 1.0.63; WriteFont must check GetSafeHandle before calling GetLogFont	1.0.65
+9/27/04	9/28/04	done	when bar floats, hide caption and decrease bar width to compensate	1.0.65
+9/24/04	9/28/04	done	save dock state of mixer control bars in document	1.0.65
+9/26/04	9/26/04	done	dragging selection via ctrl-right-click gives bad positions near end of channel; fix move clamping	1.0.65
+9/25/04	9/26/04	done	in tempo dialog, typing within edit control isn't undoable	1.0.65
+9/25/04	9/26/04	done	in dialog bar's edit control, typing can trigger accelerators	1.0.65
+9/25/04	9/26/04	done	dialog bar's tool tips don't erase themselves properly when bar is floating; don't use tooltip ctrl	1.0.65
+9/25/04	9/26/04	done	since 1.0.64, if new selection is created using single right-click, start pos is -1; notify both points	1.0.65
+7/31/04	9/26/04	done	in tempo dialog, if arrow or shift-arrow is held down, tempo isn't displayed until key is released	1.0.65
+4/19/04	9/26/04	done	mixer dialogs should be top-level windows; better yet, make them control bars so they can dock	1.0.65
+2/11/04	9/26/04	done	deleting all channels, switching to another window, and then switching back to empty document disables menu keys; converting mixer child dialogs to control bars solves this, how nice	1.0.65
+9/24/04	9/25/04	done	move load audio to top of context menu	1.0.65
+9/24/04	9/25/04	done	rework main frame's save/restore position to avoid double paint	1.0.65
+5/12/04	9/25/04	done	deleting all channels while a child dialog is visible locks up app until child dialog is closed; replace child dialogs with dialog bars	1.0.65
+5/11/04	9/25/04	done	since 1.0.40, if child dialog is visible, deleting a channel with a focused control causes dialog to become modal and lock up app until child dialog is closed; replace child dialogs with dialog bars	1.0.65
+5/17/04	7/5/04	done	popup title editor should use parent's font instead of reverting to default font	1.0.64
+1/26/04	6/27/04	done	position slider resolution is too coarse for making loops in very long samples; need fine adjust	1.0.64
+1/26/04	6/27/04	done	pitch slider resolution (approximately 10 cents) is too coarse for tuning; need 1 cent	1.0.64
+5/14/04	5/14/04	done	when loading a doc, if mute time was non-zero and tracks were soloed, unsoloed tracks fade out	1.0.63
+5/14/04	5/14/04	done	check object handle before calling GetLogFont or debug version crashes	1.0.63
+5/14/04	5/14/04	done	ampersand in audio path / title displays as underscore; must set no prefix option in resource	1.0.63
+5/14/04	5/14/04	done	when doc is loaded, if tracks were soloed, tracks below soloed tracks don't observe mute time; if in solo mode, CChannel::SetInfo must zero fader position	1.0.63
+5/12/04	5/12/04	done	when no document is open, options and master volume appear in tools instead of view	1.0.63
+5/10/04	5/12/04	done	channel titles can be hard to read; optional font selection would be handy	1.0.63
+5/10/04	5/10/04	done	mute/solo fade dialog doesn't have tooltips	1.0.63
+5/7/04	5/8/04	done	while editing a channel slider's selection range, tooltip should show range instead of value	1.0.63
+5/7/04	5/8/04	done	mute/solo tooltip should show mute/solo state, or fader position if soft mute/solo is in progress	1.0.63
+5/7/04	5/7/04	done	setting both crossfader inputs to same source behaves unexpectedly; set other input to none	1.0.63
+3/20/04	5/7/04	done	options dialog has incorrect tab order	1.0.63
+4/19/04	4/20/04	done	mute/solo time dialog's title doesn't include document	1.0.62
+3/20/04	4/20/04	done	undo auto trigger does not restore channel transport, repeat or position (side effects)	1.0.62
+4/19/04	4/19/04	done	can't use menu or accelerator to close mute/solo time dialog unless dialog has focus	1.0.62
+4/19/04	4/19/04	done	reduce slider message traffic by shadowing range and tics; not much effect on overhead	1.0.62
+4/19/04	4/19/04	done	if mouse clicks within slider's thumb rectangle, don't set position	1.0.62
+4/16/04	4/19/04	done	mute/solo time dialog is using base class accelerators	1.0.62
+4/16/04	4/19/04	done	need a way to limit drawing overhead; add animation speed control to options dialog	1.0.62
+4/16/04	4/17/04	done	mute/solo feature should support fading	1.0.61
+3/20/04	3/26/04	done	add keep solo feature (converts solo to mutes)	1.0.60
+3/7/04	3/24/04	done	no error message if load audio fails, just empty channels	1.0.59
+3/20/04	3/22/04	done	allow automation without selection; no selection means use full range	1.0.59
+3/12/04	3/12/04	done	using wheel, arrows or page up/down keys in slider generates excess undo events, coalesce	1.0.58
+3/12/04	3/12/04	done	home and end keys don't generate undo events in slider	1.0.58
+3/12/04	3/12/04	done	tab/shift+tab used to move focus within a channel; new channel PreTranslateMessage broke it	1.0.58
+3/12/04	3/12/04	done	shift-left click on position slider should open/close auto dlg	1.0.58
+3/12/04	3/12/04	done	fix options dialog tab order	1.0.58
+3/12/04	3/12/04	done	F2 should edit current channel's title	1.0.58
+3/12/04	3/12/04	done	coalesced edit must set size of undo list to current position	1.0.58
+3/8/04	3/11/04	done	in auto trigger dialog, when play is pressed, auto repeat is set; trigger selected channels dialog should emulate this behavior	1.0.57
+3/9/04	3/10/04	done	in multi-auto dialog, if only one channel, title bar should display channel title, not audio file name	1.0.57
+3/9/04	3/10/04	done	if you switch to another app while modeless child dialog (auto or volume) has focus, Mixere's icon doesn't appear in task switcher, and when you click Mixere's icon, it doesn't move to front	1.0.57
+2/1/04	3/10/04	done	tempo control for all document automations, with unity at 120 bpm; auto tempo too	1.0.57
+3/9/04	3/9/04	done	MDI accelerators (Ctrl+F4, Ctrl+F6) don't work; CChannel::PreTranslateMessage must pass key messages to parent window instead of calling TranslateAccelerator itself	1.0.57
+3/8/04	3/9/04	done	undo/redo should display wait cursor if necessary; only needed in CMixer	1.0.57
+3/8/04	3/8/04	done	sort isn't undoing correctly in some cases	1.0.56
+3/8/04	3/8/04	done	auto dialogs won't retain focus; framework uses FindUndoable to get undo titles, so don't set focus in FindUndoable unless we're really undoing/redoing	1.0.56
+3/8/04	3/8/04	done	framework calling FindUndoable is inefficient; cache undo titles within undo manager instead	1.0.56
+3/7/04	3/7/04	done	undo sort doesn't restore header control arrow	1.0.55
+3/6/04	3/7/04	done	redo insert, then redo sort crashes; sort must save indices, not pointers	1.0.55
+2/22/04	3/7/04	done	multi-channel transport, repeat, solo, and mute don't set modify flag	1.0.55
+1/9/04	3/7/04	done	undo for clipboard and multi-channel edits	1.0.55
+3/5/04	3/5/04	done	escaping from title edit generates undoable edit; must cancel edit	1.0.55
+3/4/04	3/5/04	done	loading audio into an empty doc and then undoing causes crash; save current position first	1.0.55
+1/8/04	3/5/04	done	file properties set channel count should warn before deleting non-empty channels, or allow undo	1.0.55
+3/4/04	3/4/04	done	can't drag audio files onto child window background, they're interpreted as mix files	1.0.55
+2/22/04	2/25/04	done	when channels are deleted, sometimes during redo auto edit dlg becomes modal	1.0.55
+2/22/04	2/22/04	done	undo play selected channels and similar mixer functions; undo channel sort	1.0.54
+2/21/04	2/22/04	done	since 1.0.51, opening doc with missing files and selecting cancel causes crash in debug mode	1.0.54
+2/20/04	2/21/04	done	auto dlg's time slider and time edit box don't undo correctly	1.0.54
+1/9/04	2/20/04	done	undo with redo for simple control edits	1.0.53
+2/19/04	2/19/04	done	when moving selection range, it should be centered around cursor, not left-justified	1.0.52
+2/19/04	2/19/04	done	missing nocopies macro in crossfaderdlg, popupedit, staticedit	1.0.53
+2/18/04	2/19/04	done	since 1.0.50, automation plays in reverse if selection range was drawn from right to left	1.0.52
+2/17/04	2/17/04	done	if doc has missing files, and no other docs are open, doc maximize state doesn't get restored	1.0.51
+2/17/04	2/17/04	done	if doc has missing files, and docs are maximized, view is partially painted by replace files dialog	1.0.51
+2/17/04	2/17/04	done	can't enter space in auto dialog's time edit control, it gets eaten by transport accelerator	1.0.51
+12/30/03	2/17/04	done	slider should allow moving a selection range; most useful for position slider	1.0.51
+2/15/04	2/16/04	done	in multi trigger edit dialog, left-clicking on value slider should resync any selected channels that are auto-triggering; stagger button should work too	1.0.50
+2/11/04	2/13/04	done	paste/insert and cut/delete are paste bombs; need shared primitives, reuseable for undo	1.0.49
+2/11/04	2/12/04	done	make header control a member of mixer; avoids header control accessor	1.0.48
+2/11/04	2/11/04	done	if height difference between child frame and view is less than header control height, scroll bars flicker and don't always appear when they should	1.0.47
+2/11/04	2/11/04	done	since 1.0.42, when channels are added to empty document, first channel displays incorrectly or not at all; CreateChannel must use ShowWindow to make window visible, instead of ModifyStyle	1.0.47
+2/11/04	2/11/04	done	if document is empty, clicking on track menu causes crash due to invalid current position	1.0.47
+2/10/04	2/11/04	done	can't create more than 752 channels; windows limitation, create channel must fail gracefully	1.0.47
+2/9/04	2/10/04	done	maximized documents briefly show normal frame while opening	1.0.46
+2/8/04	2/10/04	done	save column widths and mixer volume dialog placement in doc	1.0.46
+2/8/04	2/8/04	done	if you open a mix with missing tracks, missing tracks are disabled instead of empty	1.0.45
+2/6/04	2/8/04	done	after set defaults, new audio tracks have default file name as title; load audio must reset title	1.0.45
+2/1/04	2/8/04	done	save default channel settings in doc	1.0.45
+1/19/04	2/8/04	done	closing all docs resets child maximize; related to making maximize state persistent	1.0.45
+1/18/04	2/8/04	done	app should remember maximize setting for both main window and documents, using registry	1.0.45
+1/18/04	2/8/04	done	if initial new doc is unmodified, app should close it when a doc is opened, like Reason	1.0.45
+1/17/04	2/8/04	done	options dialog values should be saved in registry	1.0.45
+2/4/04	2/4/04	done	auto dialog timer hook's floating-point compare needs tolerance	1.0.44
+2/4/04	2/4/04	done	multi auto volume play normally forces audio play; suppress this for autotriggered channels	1.0.44
+1/31/04	2/2/04	done	crossfader needs a minimize button	1.0.43
+12/1/03	2/2/04	done	auto-triggering of audio, using a repeat time dialog	1.0.43
+2/2/04	2/1/04	done	multi auto dlg default position is always zero, should be center for pan and pitch	1.0.43
+2/2/04	2/1/04	done	volume, master volume, crossfader, auto edit dialogs ignore arrows and page up/down; in OnHScroll, must call base class first, otherwise auto slider gets reflected message too late	1.0.43
+2/1/04	2/1/04	done	channel auto dialog must display title, not file name	1.0.43
+2/1/04	2/1/04	done	allow left-click on auto slider during play; necessary for tweaking loops	1.0.43
+1/31/04	1/31/04	done	since 1.0.37, paste shows one channel at a time again; set Z-order, make visible, then move	1.0.42
+1/1/04	1/31/04	done	audio file name isn't helpful when file is used more than once; need titles	1.0.42
+1/28/04	1/29/04	done	auto slider ctrl's get/set auto pos is confusing; override get/set pos instead	1.0.41
+1/28/04	1/28/04	done	variable crossfader types; linear or dipless for now	1.0.40
+1/26/04	1/28/04	done	closing a dialog's automation dialog sets focus to child frame; should set focus back to dialog	1.0.40
+11/1/03	1/28/04	done	crossfading between mixes	1.0.40
+1/26/04	1/27/04	done	pitch slider is showing incorrect value on newly loaded tracks	1.0.39
+1/24/04	1/27/04	done	automation dialogs don't have tooltips	1.0.39
+1/1/04	1/26/04	done	automation dialog for selected tracks	1.0.38
+1/25/04	1/25/04	done	loading audio into last track makes current position invalid, causing crash soon thereafter	1.0.37
+1/25/04	1/25/04	done	adding new tracks via file properties doesn't work; must set parent before setting Z-order	1.0.37
+1/25/04	1/25/04	done	insert scrolls selection before removing it, causing flicker; deselect before inserting	1.0.37
+1/25/04	1/25/04	done	right-click on a slider doesn't set focus	1.0.37
+1/25/04	1/25/04	done	Ctrl-A also toggles automation dialog; don't handle key down yourself, use accelerator table	1.0.37
+1/24/04	1/24/04	done	mute and solo buttons don't have tooltips	1.0.36
+1/24/04	1/24/04	done	filename lost its tooltip because it's a static now; set notify in dialog resource	1.0.36
+1/22/04	1/24/04	done	setting mixer volume to zero in mixer's dtor crashes app; set it from view's OnDestroy instead	1.0.36
+1/19/04	1/24/04	done	replace files dialog loses focus when search finishes	1.0.36
+1/17/04	1/24/04	done	if filename button has focus, space key doesn’t toggle play; make filename a static control	1.0.36
+1/23/04	1/23/04	done	auto dlg controls don't set doc's modify flag	1.0.36
+1/23/04	1/23/04	done	pressing esc in volume dlg doesn't close volume dlg's auto dlg	1.0.36
+1/22/04	1/23/04	done	clicking on an auto dialog does not activate parent view	1.0.36
+1/22/04	1/23/04	done	auto dlg's initial position is incorrect; also need to bottom-align if dlg would be clipped	1.0.36
+1/22/04	1/23/04	done	create channel overwrites siblings; move new channels to bottom of Z-order	1.0.36
+1/21/04	1/23/04	done	when you close master vol dlg's auto dlg, master vol dlg loses focus	1.0.36
+1/21/04	1/23/04	done	closing auto dlg with middle-click in dlg's client area crashes debug version; use PostMessage	1.0.36
+1/22/04	1/22/04	done	master volume dlg disappears behind main wnd; creating at wrong time, wait until dlg is needed	1.0.36
+1/21/04	1/22/04	done	collapse view and edit mixer ctrl into mixer ctrl; mixer ctrl uses a form view, not a wnd	1.0.36
+1/21/04	1/22/04	done	add toggle repeat accelerator for both track and auto dlg	1.0.36
+1/21/04	1/22/04	done	automation dialogs should scroll with the view; must be children of view and siblings of channel, and channel must have clip siblings option set	1.0.36
+1/20/04	1/22/04	done	each mixer should have its own volume dialog, with automation, saved as part of the document	1.0.36
+1/20/04	1/21/04	done	in automation dialog, space should toggle play/pause	1.0.36
+1/20/04	1/20/04	done	if default is set to play and repeat, and a sample shorter than default channel's is loaded, sample plays once and then stops; caused by setting sample's position beyond its length	1.0.36
+1/20/04	1/20/04	done	enable multiple selection in import audio dialog	1.0.36
+1/20/04	1/20/04	done	if child is maximized, enabling status bar trashes header; child frame must size header ctrl too	1.0.36
+1/19/04	1/20/04	done	dropping multiple files at once doesn't work; should work for both docs and audio files	1.0.36
+1/19/04	1/20/04	done	status bar pane should have a colored background	1.0.36
+1/18/04	1/20/04	done	enable tool bar and status bar	1.0.36
+1/18/04	1/20/04	done	display active mixer's solo state on status bar	1.0.36
+1/19/04	1/19/04	done	when doc is closed, audio should stop immediately; zero mixer volume before deleting channels	1.0.35
+1/19/04	1/19/04	done	dropping mix file works over a view, but not over main frame background	1.0.35
+1/19/04	1/19/04	done	repeated shell open launches multiple instances of the app; doc template resource was missing filterName and filterExt substrings, due to careless use of app wizard	1.0.35
+1/18/04	1/19/04	done	view initially overwrites header, because header can't access view during initial OnSize, which is received from frame before view exists; make header a child of view, not a child of frame	1.0.34
+11/21/03	1/19/04	done	missing files/cancel displays error message "failed to open document" and then creates an empty document; SDI doc/view feature, MDI should fix it	
+11/1/03	1/19/04	done	convert application to MDI (mf)	1.0.34
+1/18/04	1/18/04	done	shell open of a non-existent file causes crash	1.0.34
+1/18/04	1/18/04	done	make options and master volume dialogs members of main frame instead of view	1.0.34
+1/17/04	1/18/04	done	shell open doesn't work; can't open doc because view doesn't exist yet, move data into doc	1.0.33
+1/17/04	1/17/04	done	with mute/solo, default frame is too small to avoid horizontal scroll bar; shrink filename	1.0.32
+1/17/04	1/17/04	done	file replace dialog needs a search folder button	1.0.32
+1/17/04	1/17/04	done	dropping mix file doesn't work anymore; channel's OnDropFiles must be declared virtual	1.0.32
+1/11/04	1/17/04	done	space bar should toggle selected tracks between pause and play	1.0.32
+11/30/03	1/17/04	done	mute and solo buttons on each channel; mute/solo selected channels	1.0.32
+1/16/04	1/16/04	done	up/down arrow, page up/page down, and mouse wheel are reversed; un-reverse them	1.0.31
+1/12/04	1/16/04	done	can't drop .aif files unless the extension is .aiff; add .aif to audio file filter	1.0.31
+1/11/04	1/16/04	done	audio file filter is hard-coded in three places: twice in channel, and in replace files dialog	1.0.31
+1/11/04	1/11/04	done	if automation is cleared by right-click, but button is released over automation dialog, thumb keeps moving though no selection exists; right button down must clear automation info	1.0.31
+1/9/04	1/11/04	done	file open and new don't reset header control sort indicator; only a problem because of SDI	1.0.31
+1/8/04	1/9/04	done	header control should have buttons for sorting tracks	1.0.30
+1/8/04	1/9/04	done	header control buttons should have an arrow indicating current sort order	1.0.30
+1/7/04	1/9/04	done	show/hide selection is too clumsy; custom draw sliders instead	1.0.30
+1/3/04	1/8/04	done	file search should have a progress dialog with a cancel button	1.0.30
+1/1/04	1/5/04	done	channels are sometimes misaligned by 1 or 2 pixels; to demo, load shorts file, pause bottom two tracks, sort by transport; column resizer must not apply margin corrections to parent window	1.0.29
+1/1/03	1/5/04	done	file search should search all fixed disks, not just C:	1.0.29
+1/3/04	1/3/04	done	file search fails if missing files are used more than once; only the first instance is replaced	1.0.29
+1/2/04	1/3/04	done	since auto-trigger sliders don't support waveforms, they should disable waveform combo box	
+1/2/04	1/3/04	done	add file version to clipboard ID string to prevent paste to/from older versions crashing app	
+1/1/04	1/2/04	done	clicking within an automation dialog doesn't move current position to the corresponding channel	1.0.28
+12/1/03	1/2/04	done	automation jumps or goes backwards unexpectedly when it's restarted or selection is changed	1.0.28
+12/30/03	1/1/04	done	need some concept of current channel, so that copy and paste (and play, etc.) always work; left or right clicking anywhere in a channel makes it the current channel, and it should show focus	1.0.28
+12/30/03	12/30/03	done	add master volume automation	1.0.28
+12/29/03	12/30/03	done	sort channels by name or transport; must repaint channels without ever overwriting a window	1.0.28
+12/12/03	12/30/03	done	master volume dialog should be modeless, with a check in the menu item	1.0.28
+12/12/03	12/30/03	done	add play, pause, stop selected tracks	1.0.28
+11/30/03	12/30/03	done	try moving channel buttons down 1 unit so selection bar surrounds them on all sides	1.0.28
+11/1/03	12/30/03	done	selection mode should be easier to get out of (mf); add deselect to channel context menu	1.0.28
+12/1/03	12/28/03	done	add tool tips; track data changes, both input-driven and timer-driven; option to enable/disable	1.0.28
+11/1/03	12/12/03	done	add volume, pan, and pitch automation	1.0.28
+12/11/03	12/11/03	done	disable setting audio device while sounds are open, otherwise Audiere misbehaves	1.0.27
+12/11/03	12/11/03	done	if channel's PreTranslateMessage call's main window's PreTranslateMessage directly, deleting a channel while it's playing causes an access violation; go back to using PostMessage	1.0.27
+12/10/03	12/11/03	done	if a channel control is disabled while it has focus, and the user subsequently exits from a dialog using the esc key, the app's alt keys stop working; must switch focus to an enabled control	1.0.27
+12/1/03	12/11/03	done	add menu option to select audio device	1.0.27
+12/8/03	12/10/03	done	after column resizing, inserted tracks don't have correct widths	1.0.26
+12/6/03	12/10/03	done	column dividers are centered between some controls and not others; window widths should be calculated directly from column widths, instead of using deltas	1.0.26
+12/6/03	12/10/03	done	support "no show while dragging" column resizing, using vertical line in view	1.0.26
+12/6/03	12/10/03	done	controls in column groups (e.g. transport buttons) should stretch proportionally	1.0.26
+12/4/03	12/10/03	done	opening new doc while maximized causes resizing; this was fixed, but removing the maximize pos slider feature broke it again; don't call ResizeParentToFit	1.0.26
+12/5/03	12/8/03	done	during loop selection, if new loop overlaps previous loop, don't let position escape from loop	1.0.25
+12/7/03	12/7/03	done	vertical scrolling completely broken	1.0.25
+12/5/03	12/7/03	done	header gets out of sync w columns if header is dragged left when horz scroll bar is on far right	1.0.25
+11/30/03	12/6/03	done	header control with drag resizing of columns	1.0.24 
+12/5/03	12/5/03	done	if no vert scroll bar, drag selecting downwards causes channels to scroll off screen	1.0.23
+12/5/03	12/5/03	done	dragging volume column partially over transport column, and then dragging filename column back the other way can cause screen artifacts	1.0.23
+12/1/03	12/5/03	done	serialize must be version-aware so that older files can still be read after new features are added	1.0.23
+11/1/03	12/5/03	done	master volume control (mf)	1.0.23
+12/3/03	12/4/03	done	make missing sounds stuff generic; missing files	1.0.21
+11/21/03	12/3/03	done	missing files search doesn't work	1.0.21
+12/2/03	12/2/03	done	right click drag on position slider track clears loop selection bar immediately, but doesn't actually remove previous loop until button is released	1.0.20
+12/1/03	12/2/03	done	if no vert scroll bar, adding enough channels to make it appear causes incorrect cform width	1.0.19
+12/1/03	12/2/03	done	setting channel count above 64 doesn't change cform size; missing OnResize in ResizeToFit	1.0.19
+12/1/03	12/2/03	done	inserting/deleting channels doesn't change cform size; missing ResizeToFit in MoveChannels	1.0.19
+11/30/03	12/2/03	done	fix for pos slider jumps doesn't work for loops shorter than 1 sec	1.0.19
+11/30/03	12/2/03	done	Audiere loop source position is in the future by 1 second relative to sound source position, causes slider to jump 1 sec when loop is added/removed; Audiere bug	1.0.19
+11/30/03	12/2/03	done	during play, creating pos loop ahead of current pos causes jump to unexpected pos; also during play, left-clicking on pos track outside of loop area causes jump, both related to 1 sec problem	1.0.19
+11/30/03	11/30/03	done	resizing with show window contents while dragging causes flickerama, major battle	1.0.16
+11/30/03	11/30/03	done	flicker fix causes set channels to leave all ctrls undrawn (except pos!) if new channels are over cform bg; new does it too except file button gets drawn, total bitch	1.0.17
+11/30/03	11/30/03	done	flicker fix causes selection to not paint number static boxes, must invalidate in chan select	1.0.18
+11/30/03	11/30/03	done	only number area should cause selection, not all bg (mf)	1.0.18
+11/30/03	11/30/03	done	during dragging selection and scrolling, after button is released scrolling doesn't stop	1.0.18
+11/30/03	11/30/03	done	select, deselect, left-click on bg between ctrls and drag cursor outside cform causes unexpected selection	1.0.18
+11/30/03	11/30/03	done	transport buttons should be closer together	1.0.19
+11/1/03	11/21/03	done	child controls break accelerator key support	1.0.15
+11/1/03	11/21/03	done	if repeat state is changed while track is stopped, next play resets to beginning of sample; Audiere bad behavior; fixed in CAudio	1.0.15
+11/1/03	11/21/03	done	remove loop selection not working	1.0.15
+11/1/03	11/21/03	done	selection of channels (move channel number to a flat button that also serves as a selector?)	1.0.15
+11/1/03	11/21/03	done	clipboard support, done	1.0.15
+11/1/03	11/21/03	done	sometimes adding channels causes incorrect position slider size	1.0.15
+11/1/03	11/21/03	done	insert doesn't work; also occurs with cut/paste, to demonstrate, run, widen window, delete a channel, narrow window again	1.0.15
+11/1/03	11/21/03	done	opening new doc while maximized causes resizing	1.0.15
+11/1/03	11/21/03	done	can't drop a document, only audio files	1.0.15
+11/1/03	11/21/03	done	missing files/ignore can leave channels uninitialized, strange behavior when loading test.mix	1.0.15
+11/1/03	11/21/03	done	loop source position compensation is not a constant, the number of frames equal to 1 second depends on sample rate	1.0.15
+11/1/03	11/21/03	done	samples shorter than one second don't display correctly when looped	1.0.15
+11/1/03	11/21/03	done	shift-select doesn't support selection trimming	1.0.15
+11/1/03	11/21/03	done	load file resizes window even when app is maximized	1.0.15
+11/1/03	11/21/03	done	after window is widened, repeated file/new causes horz creep; +1 in ResizeToFit fixes it, why?	1.0.15
+11/1/03	11/21/03	done	insert/delete channel(s)	1.0.15
+3/24/05		hold	make CFormListView's resizable columns and header optional, to allow non-linear forms	
+3/19/05		hold	waveform preview with time/ amplitude zoom, horz scroll bar, and selection; uncompr audio only	
+2/1/05		hold	replace for channel titles? auto-hiding of file extension might be more useful	
+2/1/05		hold	master mixer with mute/solo, volume and snapshot list for each open doc; reuse form list view	
+1/29/05		hold	for pitch sliders, Page Up/Down keys should move thumb in semitones	
+1/28/05		hold	auto time slider should support hundredths of a second, but then minutes button is misleading	
+1/28/05		hold	when time slider's unit is seconds, spin delta is .01 seconds, but .05 is max timing resolution with 20Hz clock; slows stepping needlessly, delta could be .05 in this case	
+1/14/05		hold	need secondary sort; could be modified header click, or a primary sort control	
+11/9/04		hold	solve sync loss problem by adding sync mode to auto dlg; when set, auto pos is a modulus of a master clock instead of a unique state, and slider thumb is locked during automation	
+10/30/04		hold	multi auto dialogs should be modeless; complicates undo and selection logic	
+9/24/04		hold	showing a dialog bar doesn't give it focus; could be a feature, not sure	
+5/7/04		hold	in multi auto dialogs, slider should have a datatip just like channel sliders; audio position is a problem because it's displayed in seconds and loops may have different lengths	
+5/7/04		hold	need way to temporarily override mute/solo fading; control key?	
+4/19/04		hold	add grouping with color-coded name buttons; channel number header should sort by group?	
+3/12/04		hold	undo insignificant edits not fully implemented; would increase size of undo state	
+3/12/04		hold	arrow keys should move current channel? can't use main accelerator, it breaks auto slider arrows	
+2/18/04		hold	auto trigger slider should indicate auto pos; how to do without excessive overhead?	
+1/17/04		hold	audio filename display options: suppress extension, remove leading digits	
+1/9/04		hold	auto-scrubbing: automation that moves the audio selection instead of moving the thumb, but then how do you specify the automation range?	
+1/1/04		hold	recording would be nice; use river past audio capture for now	
+12/30/03		hold	presets and/or assignable macro keys to trigger fade in/out for several tracks at once (toshi)	
+12/30/03		hold	context-sensitive help would be nice	
+12/20/03		hold	alternate (faster) way to create automation loops; effect dialog with rate, width, bias controls?	
+11/1/03		hold	dragging channels between documents; requires OLE	
+11/1/03		hold	automation of automation (2nd derivative); very fancy	
+2/17/05		punt	if search string isn't found, closing message box should set focus to find dialog's edit control	
+2/15/05		punt	if large fonts are enabled, auto-slider height is off by just a hair, so that tips of selection range arrows are visible at bottom of slider, but only when slider doesn't have focus	
+2/15/05		punt	if large fonts are enabled, and a slider has selection range and bottom-pointing thumb, bottom edge of slider channel is visible through thumb; windows bug, must custom draw entire thumb	
+1/17/05		punt	audio play crashes w2k on Gateway GP6-400; sound card driver issue? audiere bug?	
+12/31/04		punt	ramp up/down has double the frequency of triangle/square; triangle/square has correct period	
+12/30/04		punt	can't create more than ten 64-track docs, or 708 channels in a single doc; try this under XP?	
+10/2/04		punt	floating main frame control bars appear before app's main window, while audio is created	
+10/2/04		punt	floating child frame control bars remain visible after document is closed, while audio shuts down	
+10/2/04		punt	if a control bar is floating, tooltips of nearby channels are partially hidden or don't erase entirely	
+9/30/04		punt	mixer should derive from scroll view, not form view, but drawing background flicker-free is hard	
+9/26/04		punt	title shifts slightly to the right during popup edit (amount varies with font); handle paint?	
+7/6/04		punt	raising tempo and lowering it again causes auto-trigger loops to get slightly out of sync	
+7/4/04		punt	when a looping auto slider is resynced, undo doesn't restore original sync; problem occurs with all auto sliders, not only position, and not only with left-click, but also multi-edit, cut/paste, etc.	
+6/26/04		punt	if position slider has a selection, for short samples, tool tip reports incorrect position when thumb is outside of selection, or near end of channel; audiere bug?	
+3/10/04		punt	in multi auto dlg, if auto triggers are switched to non-repeat and stop by themselves, indicators on position slider thumbs sometimes become inaccurate; only happens with very short loops	
+3/8/04		punt	when an auto-triggered sample has a selection, start point becomes slightly erratic; audiere bug?	
+3/7/04		punt	during undo, focus and active channel are always one step behind their correct position	
+2/7/04		punt	on Dell laptop, loading audio by dragging files from Windows explorer can cause audio artifacts, e.g. clicking, esp. if many tracks are playing; roll your own modeless file browser?	
+1/24/04		punt	tooltip updates in OnHScroll and TimerHook cause tooltip to track mouse; how to prevent this?	
+1/20/04		punt	in file dialog, if multiple selections are made, current folder setting is lost; windows bug	
+1/17/04		punt	when a dialog is displayed before opening a big file, dialog doesn't always erase cleanly	
+1/10/04		punt	context menu play/stop/pause should be disabled for empty tracks, but what if multiple tracks are selected and only some of them are empty?	
+1/1/04		punt	sometimes the focused channel isn't the same as the current channel	
+1/1/04		punt	holding down close or minimize button in an automation dialog blocks message loop, causing automation to freeze; clicking on title bar also blocks but it recovers after a second or so	
+12/8/03		punt	on Dell desktop, clicking pitch can cause volume to jump; another pitch-related Audiere bug?	
+12/5/03		punt	volume controls leak slightly when all the way down, worse with master volume, no idea why	
+12/2/03		punt	audio position correction fails when entering a loop for the first time; Audiere delay, no solution	
+11/1/03		punt	restarting paused audio causes a nasty glitch in output; audiere bug, workaround is stop mutes volume and waits 50ms for stream to flush	
+11/1/03		punt	on Dell desktop, moving pitch slider doesn't always change the pitch, especially near slider's endpoints; CAudio::SetPitch receives the message, but doesn't seem to hold it, Audiere bug?	

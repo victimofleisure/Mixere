@@ -1,0 +1,18 @@
+<title>Restoring a Snapshot</title>
+<body>
+
+<h3>Restoring a Snapshot</h3>
+
+<p>To restore a snapshot, select its name from the drop list in the Snapshots <a href="../Loose_Ends/Control_Bars.htm">control bar</a>.  To show or hide the control bar, choose <em>Snapshots</em> from the View menu, or press N.  If the snapshot has a shortcut key, you can restore it by simply pressing that key.  Snapshots can also be restored from the <a href="../Snapshots/Editing_Snapshots.htm">Edit Snapshots</a> dialog.
+
+<p>Tracks may have been added or deleted since the snapshot was taken.  Added tracks (i.e. tracks that exist in the document, but not in the snapshot) are muted.  Deleted tracks (i.e. tracks that exist in the snapshot, but not in the document) are ignored.
+
+<p><a href="../Documents/Mute-Solo_Fade.htm">Mute/Solo Fade</a> affects restoring snapshots.  If the mute/solo fade time is non-zero, any mute/solo buttons that are modified by the restore will have a gradual effect.  If the snapshot and the current state are identical except for mute/solo differences, the restore effectively becomes a crossfade to the snapshot; the mute/solo fade time determines the length of the crossfade.  For best results, combine mute/solo fade with Smooth restore mode, described below.
+
+<p>Snapshots can be restored in one of two modes: Exact, or Smooth.  The restore mode is changed using the Edit Snapshots dialog; see <a href="../Snapshots/Editing_Snapshots.htm">Editing Snapshots</a>.
+
+<p>In Exact mode, every track attribute (other than the track name) is restored.  This has a downside: it can cause discontinuities (skips) in the audio, due to the restoring of audio and automation positions.  If a given track was playing when the snapshot was taken, and is still playing when the snapshot is restored, that track will probably skip, because its current and restored audio positions will probably differ.  Automations may also skip, for the same reason.
+
+<p>In Smooth mode, audio and automation skips are avoided, by not restoring audio or automation positions in the situation described above.  Smooth mode is a trade-off: it makes the transition smoother, but the restored state is less predictable.
+
+</body>

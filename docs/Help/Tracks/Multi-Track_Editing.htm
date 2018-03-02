@@ -1,0 +1,46 @@
+<title>Multi-Track Editing</title>
+<body>
+
+<h3>Multi-Track Editing</h3>
+
+<p>Some of Mixere's commands can operate on multiple tracks at once.  For example, to start several tracks playing at once, first <a href="../Tracks/Selecting_Tracks.htm">select</a> the tracks, and then choose <em>Play</em> from the Track menu or context menu, or press 'P'.  The Toggle, Pause, Stop, Mute, Solo and Go commands work the same way.
+
+<p>It's also possible to edit a track slider (volume, pan, pitch, or position) in multiple tracks at once.  For example, to set the volume of several tracks at once, first select the tracks, and then choose <em>Volume</em> from the Track menu.  An edit dialog is displayed.  The dialog's first control is a slider; it controls the volume for the selected tracks.  If you move the slider, the volume sliders in the selected tracks jump to the same position.  If you edit the <a href="../Tracks/Audio_Selections.htm">slider selection</a>, the same edit is applied to the volume sliders in the selected tracks.
+
+<p>To pan several tracks at once, follow the preceding example, substituting "pan" for "volume"; likewise for pitch and position.  Note that the edit dialog is modal; once it's open, you can't do anything else in Mixere until you close the dialog.
+
+<p>The edit dialog includes edit boxes for current position, selection start, and selection end.  These are useful for specifying precise values.  The value ranges are different for each type of slider:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Slider</th><th>Value Range</th>
+</tr>
+<tr>
+<td>Volume</td><td>0 = silence, 1 = maximum</td>
+</tr>
+<tr>
+<td>Pan</td><td>-1 = left, 0 = middle, 1 = right</td>
+</tr>
+<tr>
+<td>Pitch</td><td>-12 = down an octave, 0 = flat, 12 = up an octave; in semitones</td>
+</tr>
+<tr>
+<td>Position</td><td>0 to audio file length, in seconds
+</tr>
+</table>
+
+<p>The edit dialog contains additional controls which are used to create, modify, or synchronize <a href="../Automation/Automation_Sliders.htm">automations</a> in multiple tracks at once; for a summary of these controls, see the <a href="../Automation/Automation_Dialog.htm">Automation Dialog</a>.
+
+<p>For example, to start a panning loop in several tracks at once, select the tracks, choose <em>Pan</em> from the Track menu, and in the edit dialog, press the Loop and Play buttons.  If the pan sliders have identical selections and automation times, they stay in sync, but they may be offset from one another, depending on their initial positions.  To make them line up exactly, left-click the edit dialog's automation slider.  For more options, see <a href="../Automation/Synchronization.htm">Synchronization</a>.
+
+<p>The edit dialog also includes a "Stagger" button.  This button arranges the sliders for selected tracks, by spreading them out, so that they're evenly spaced from left to right.  For example, when editing pan, it spreads the tracks in the stereo image.  By combining this feature with automation, it's possible to make the sliders move in a diagonal pattern, like a flock of birds.  The sliders must have identical selections and automation times for this to work.
+
+<p>An edit dialog control may be initialized to a default or indeterminate value; this indicates that the selected tracks have different values for that control.
+
+<p>See also the summary of <a href="../Reference/Multi-Track_Commands.htm">Multi-Track Commands</a>.
+
+</body>

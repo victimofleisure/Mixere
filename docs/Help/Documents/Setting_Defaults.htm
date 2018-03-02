@@ -1,0 +1,22 @@
+<title>Setting Defaults</title>
+<body>
+
+<h3>Setting Defaults</h3>
+
+<p>When an audio file is loaded into a track, the new track's attributes (e.g. volume, pan, automations, etc.) are assigned default values.  These default attributes can be changed, using the procedure outlined below.  Setting defaults doesn't affect existing tracks; it only affects subsequently loaded audio.
+
+<ol>
+<li>Pick a track that already has the desired attributes, or adjust a track until it has the desired attributes; this track is the <em>source</em> of the new default attributes.
+<li>While that track is the current track, choose <em>Set Defaults</em> from the File menu.  The next time you load an audio file, it will have the new default attributes.
+</ol>
+
+<p>You can also choose <em>Set Defaults</em> from the context menu.  To display the context menu, right-click anywhere within the track except over a slider.  Since right-clicking on a track automatically makes it the current track, you may find this method more intuitive.
+
+<p>To restore the initial default attributes, follow the above procedure, using an <em>empty track</em> as the attribute source.
+
+<p>The defaults behave like a "hidden" track that's always present in your document.  When you set defaults, you're copying the desired attributes from a track that has them, into this hidden track.  When you load audio, the new track's attributes are copied from this hidden track.  Note that because defaults are saved with the document, different documents can have different defaults.
+
+<p>The defaults are assigned to all track attributes except audio filename and track title, not just the initial slider positions.  It's possible to set defaults such that newly loaded tracks start out muted, soloed, playing, paused, automating, etc.
+
+
+</body>

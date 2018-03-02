@@ -1,0 +1,18 @@
+<title>Mute/Solo Fade</title>
+<body>
+
+<h3>Mute/Solo Fade</h3>
+
+<p>Mute and solo normally have an instantaneous effect on the audio output, but in Mixere, they can also be made gradual.  This is a very powerful feature, because it allows complex crossfades to be created with minimal user interaction.
+
+<p>The Mute/Solo Fade <a href="../Loose_Ends/Control_Bars.htm">control bar</a> is used to specify how long subsequent mute/solo operations should take.  The duration can range from 1/100 of a second to 100 hours.  Each document has its own Mute/Solo Fade control bar.  To make the control bar visible, choose <em>Mute/Solo Fade</em> from the View menu, or press 'F'.
+
+<p>The control bar is similar to an <a href="../Automation/Automation_Dialog.htm">automation dialog</a>: it includes a time slider with a minutes button, and a time edit box.  The slider's time unit is either seconds, or if the minutes button is pressed, minutes.  The time can be entered directly in the edit box, and the edit box also has up/down buttons, which change the time either by hundredths of second, or if the minutes button is pressed, by seconds.
+
+<p>To enable mute/solo fading, set a non-zero time.  All subsequent mute/solo operations will take this amount of time.  Note that changing the time does NOT affect mute/solo fades that are already in progress.  This means it's possible to initiate a mute/solo operation of one duration, and while that operation is in progress, initiate another mute/solo operation of a different duration.
+
+<p>To disable mute/solo fading, set the time to zero: this causes mute and solo to behave as they do on most mixers, i.e. they have an instantaneous effect.
+
+<p>Note that if you mistakenly initiate a mute/solo fade, you can use undo (Ctrl+Z) to reverse the operation, but the reversal won't be instantaneous: it will also be a fade.  To immediately abort a mute/solo fade, first set the mute/solo fade time to zero, and then repeat the mute/solo operation.
+
+</body>

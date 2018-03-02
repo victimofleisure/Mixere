@@ -1,0 +1,43 @@
+<title>Audio Selections</title>
+<body>
+
+<h3>Audio Selections</h3>
+
+<p>A selection is a subset of an audio file, consisting of a start point, and an end point.  When a track has a selection, it behaves as follows:
+
+<ul>
+<li>Pressing "Stop" rewinds the audio to the selection start, instead of the beginning of the audio file.
+<li>When the audio reaches the selection end, it rewinds to the selection start, and either stops, or if loop mode is on, continues from the selection start.
+</ul>
+
+<p>By loading an audio file into multiple tracks, and then creating a different selection in each track, you can effectively divide an audio file into "samples" without ever having to actually edit the file.
+
+<p>A selection is indicated by a blue bar within the slider's channel.  The channel is the sunken, rectangular area over which the slider thumb moves.  Selections are created, edited, and removed using the right mouse button, as follows:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th>Operation</th><th>Description</th>
+</tr>
+<tr>
+<td>Create selection via dragging</td><td>Within the slider's channel, right-click where you want the selection to begin, and while holding down the right mouse button, move the cursor horizontally to where you want the selection to end; then release the right mouse button.</td>
+</tr>
+<tr>
+<td>Create or edit selection via right-click</td><td>Right-click within the slider, and release the right button immediately, <em>without</em> moving the cursor.  If no selection exists, a selection is created from the slider thumb to the cursor position; otherwise, whichever end of the existing selection the cursor is closest to is extended or trimmed.</td>
+</tr>
+<tr>
+<td>Remove selection</td><td>Right-click just outside the slider channel, i.e. anywhere in the zone between the slider's channel and its focus rectangle.</td>
+</tr>
+<tr>
+<td>Move selection</td><td>Ctrl+right-click on the selection, and while holding down the right mouse button, move the cursor horizontally.  The cursor changes to a double-headed horizontal arrow, and the selection follows the cursor.  When the selection is in the desired location, release the right mouse button.</td>
+</tr>
+</table>
+
+<p>Selections can be created, edited, or removed at any time, even while the audio is playing.  This is particularly useful when loop mode is on, because it allows "live looping", i.e. dynamically creating repeated samples within an audio file.  Moving a short selection back and forth while the audio is playing creates a "scratching" or "scrubbing" effect.
+
+<p>Selections can also be edited using shortcut keys; see <a href="../Reference/Automation_Slider_Commands.htm">Automation Slider Commands</a> for details.
+
+</body>

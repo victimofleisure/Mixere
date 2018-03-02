@@ -1,0 +1,44 @@
+<title>Synchronization</title>
+<body>
+
+<h3>Synchronization</h3>
+
+<p>In Mixere, synchronization means causing events to happen simultaneously, e.g. playing multiple audio files at once, or starting multiple <a href="../Automation/Automation_Sliders.htm">automations</a> at once.  It can also mean programming automations to stay lined up with each other, or move in a pattern.  Note that starting automations simultaneously doesn't guarantee they'll stay in sync with each other; they also must have identical selections and automation times.  Mixere supports the following synchronization methods:
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<td>Multi-track edit dialog</td><td>This dialog allows you to start automations in multiple tracks at once, but only for one slider type at a time (e.g. Pan).  Looped automations can be lined up with each other, or staggered.  The edit dialog is displayed when you choose Volume, Pan, Pitch, or Position from the Track menu.  For details, see <a href="../Tracks/Multi-Track_Editing.htm">Multi-Track Editing</a></td>
+</tr>
+<tr>
+<td>Volume automation unpauses audio</td><td>When this option is checked, starting a volume automation has a side effect: if the track's audio is paused, it begins playing.  This option has been superceded by the "Go" command (see below).  See also <a href="../Loose_Ends/Options.htm">Options</a>.</td>
+</tr>
+<tr>
+<td>Go command</td><td>This command unpauses all paused audio or automations in the selected tracks, or if no tracks are selected, in the current track.  Unlike the multi-track edit dialog, this method can start automations in different slider types at once.</td>
+</tr>
+</table>
+
+<p>Of all these methods, the Go command is the most general.  It can be used to start audio and/or automations of any slider, in a single track, or in multiple tracks.  For example, within a single track, you could start a volume automation and a pan automation at the same time, by doing as follows:
+
+<ol>
+<li>Make sure no tracks are selected (choose <em>Deselect</em> from the Edit menu, or press Esc).
+<li>Pause the track's volume slider: show its automation dialog (middle-click, or Shift+left-click), and press the automation dialog's Pause button.
+<li>Pause the track's pan slider, in the same way.
+<li>Choose <em>Go</em> from the Track menu, or press Shift+Space.
+</ol>
+
+<p>For another example, you could start several tracks playing at once, while simultaneously starting automations of their pan and pitch sliders, by doing as follows:
+
+<ol>
+<li>Select several tracks.
+<li>Pause the tracks, by choosing <em>Pause</em> from the Track menu, or pressing 'U'.
+<li>Pause their pan sliders: choose <em>Pan</em> from the Track menu, press the edit dialog's Pause button, and close the dialog.
+<li>Pause their pitch sliders, in the same way.
+<li>Choose <em>Go</em> from the Track menu, or press Shift+Space.
+</ol>
+
+
+</body>

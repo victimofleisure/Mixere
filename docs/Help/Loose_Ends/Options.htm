@@ -1,0 +1,51 @@
+<title>Options</title>
+<body>
+
+<h3>Options</h3>
+
+<p><table border=1 cellpadding=2 cellspacing=0>
+<colgroup>
+<col valign=top>
+<col valign=top>
+</colgroup>
+<tr>
+<th colspan=2>General</th>
+</tr>
+<tr>
+<td>Undo - Levels</td><td>The number of operations that can be undone; if set to zero, undo is disabled.  This value can only be edited if Unlimited (see below) is unchecked.</td>
+</tr>
+<tr>
+<td>Undo - Unlimited</td><td>If checked, the undo history grows without limit; otherwise, Levels (see above) limits the number of operations that can be undone.  If unlimited, the undo history can consume a significant amount of memory over time, especially for clipboard and snapshot operations.</td>
+</tr>
+<tr>
+<td>Display Tooltips</td><td>If checked, tooltips are displayed throughout Mixere, except in modal dialogs.</td>
+</tr>
+<tr>
+<td>Audio Device</td><td>Selects which audio driver Mixere will use; normally set to "default".  The other options are "directsound" (DirectX), "winmm" (Windows Multi-Media), and "null" (no audio).  Note that while audio files are open, this option is disabled: to re-enable it, close all documents.</td>
+</tr>
+<tr>
+<th colspan=2>Sliders</th>
+</tr>
+<tr>
+<td>Display Smoothness</td><td>Allows you reduce Mixere's CPU usage by making automation jerky.  At maximum, <a href="../Automation/Automation_Sliders.htm">automation sliders</a> move smoothly; at minimum, they move in jerks, but CPU usage is reduced.  Note that this option only affects the visual feedback, not the audio; audio is always automated as smoothly as possible.  This option should normally be set to maximum, unless automation is causing excessive CPU usage.  This could happen if a large number of automations are occurring simultaneously.</td>
+</tr>
+<tr>
+<td>Middle-click shows auto dialog</td><td>If checked, pressing the middle mouse button (wheel) while the cursor is over an automation slider causes the slider's <a href="../Automation/Automation_Dialog.htm">automation dialog</a> to be shown, or hidden if it's already visible.  If unchecked, the automation dialog can still be accessed using Ctrl+left-click.</td>
+</tr>
+<tr>
+<td>Automate volume unpauses audio</td><td>If checked, starting a volume automation has a side effect: if the track's audio is paused, it begins playing.  If unchecked, this side effect is disabled.  Note that the "Go" command provides a more general <a href="../Automation/Synchronization.htm">synchronization</a> method.</td>
+</tr>
+<td>Auto-trigger turns off audio looping</td><td>If checked, starting an <a href="../Automation/Auto-Trigger.htm">auto-trigger</a> has a side effect: it turns off audio looping for the corresponding track.  If unchecked, this side effect is disabled.</td>
+</tr>
+<tr>
+<th colspan=2>Appearance</th>
+</tr>
+<tr>
+<td>Font</td><td>Allows you to change the font used for track titles.  Press the "Choose" button to display the standard font dialog.  Select the desired font, and press OK.  To restore the default font, press the "Default" button.</td>
+</tr>
+<tr>
+<td>Color</td><td>Allows you to change some of Mixere's colors.  Currently only two colors can be changed: "Selection" (indicates which tracks are selected), and "Current" (indicates which track is the current track).  Use the list box to select the color you want to change.  Press the "Choose" button to display the standard color dialog.  Select the desired color, and press OK.</td>
+</tr>
+</table>
+
+</body>
